@@ -58,7 +58,6 @@ ui_*.h
 *.moc
 *.o
 *.obj
-*.exe
 *.dll
 *.dylib
 
