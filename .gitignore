@@ -1,0 +1,76 @@
+# Python 編譯文件
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 虛擬環境
+venv/
+env/
+ENV/
+.env
+.venv
+env.bak/
+venv.bak/
+
+# IDE 文件
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+.spyderproject
+.spyproject
+.ropeproject
+.project
+.pydevproject
+.settings/
+
+# Qt 相關文件
+*.ui.autosave
+*_ui.py
+*.qmlc
+*.jsc
+*.qm
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
+*.pro.user
+*.pro.user.*
+*.qbs.user
+*.qbs.user.*
+*.moc
+*.o
+*.obj
+*.exe
+*.dll
+*.dylib
+
+# 日誌文件
+*.log
+logs/
+log/
+
+# 臨時文件
+*.bak
+*.tmp
+*.temp
+.*.swp
+.*.swo
+*~
