@@ -374,52 +374,6 @@ if __name__ == '__main__':
     apply_stylesheet(app, theme='dark_teal.xml')
     w = WidgetA_UiEN13231()
     w.show()    
-    app.exec()  # 在 PySide6 中 exec_() 已更改為 exec()
+    app.exec() 
     w.noGO = True
     sys.exit()
-
-    QWidget
-
-    
-
-def GO_pushbuttoned(self):
-    print("go")
-    for roi in self.data:
-        print(roi)
-        match roi.get("type", None):
-            case "keyboard":
-                try:
-                    # 處理組合鍵
-                    key_input = roi["key"]
-                    if "+" in key_input:
-                        # 如果是組合鍵（例如 "alt+tab"）
-                        keys = key_input.split("+")
-                        # 按下所有鍵
-                        for k in keys[:-1]:
-                            keyboard.press(k.strip())
-                        # 按下並釋放最後一個鍵
-                        keyboard.press_and_release(keys[-1].strip())
-                        # 釋放所有之前按下的鍵（從後往前）
-                        for k in reversed(keys[:-1]):
-                            keyboard.release(k.strip())
-                    else:
-                        # 如果是單個鍵
-                        keyboard.press_and_release(key_input)
-                except Exception as e:
-                    print(f"無法執行鍵盤操作: {e}")
-            
-            case "move":  # 處理滑鼠移動
-                pyautogui.moveTo(int(roi["X"]), int(roi["Y"]), duration=float(roi["speed"]))
-            
-            case "click":  # 處理滑鼠點擊
-                click = 2 if roi.get("doubleclick", False) else 1
-                button = 'left' if roi.get("left", True) else 'right'
-                pyautogui.click(button=button, clicks=click, interval=0.1)
-
-        # 每個操作後的延遲處理
-        try:
-            wait_time = float(roi["time"])
-            if wait_time > 0:
-                time.sleep(wait_time)
-        except (ValueError, KeyError):
-            pass  # 如果轉換失敗或沒有time鍵，不等待
